@@ -58,7 +58,7 @@ else {
 
         Remove-AzVMNetworkInterface -VM $Vm -NetworkInterfaceIDs $varOldNicId
 
-        Write-Host -ForegroundColor Green "`nThe Network Interface was removed, but will first be visible once VM is started`n"
+        Write-Host -ForegroundColor Green "`nThe old NIC was removed, but will first be visible once VM is started`n"
         
     #! Attach the pre-configured Network Interface
     
@@ -73,7 +73,7 @@ else {
         # Add the network interface
         Add-AzVMNetworkInterface -VM $Vm -Id $varNewNic.Id -Primary
 
-        Write-Host -ForegroundColor Green "`nNetwork Interface was added, updating state of VM $VmName with 'Update-AzVM'"
+        Write-Host -ForegroundColor Green "`nThe new NIC was added, updating state of VM $VmName with 'Update-AzVM'"
 
         #Update state of VM
         Update-AzVM -ResourceGroupName $Vm.ResourceGroupName -VM $Vm
