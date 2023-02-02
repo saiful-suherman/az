@@ -9,10 +9,6 @@
 [CmdletBinding()]
 param ($AzSubscription, $VmName, $NewNicIpAddress)
 
-<# $AzSubscription = "PROD"
-$VmName = "vm1"
-$newNicIpAddress = "192.168.255.4" #>
-
 #! Check Azure Connection
 Connect-AzAccount -Subscription $AzSubscription
 
